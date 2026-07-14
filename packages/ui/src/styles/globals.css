@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --shell-titlebar-height: 2.75rem;
+    --shell-min-width: 1280px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    @apply h-full min-h-full w-full overflow-hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    /* Explicit fallback if CSS variables resolve late */
+    background-color: hsl(var(--background, 0 0% 7%));
+  }
+}

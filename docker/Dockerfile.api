@@ -1,0 +1,29 @@
+# syntax=docker/dockerfile:1.7
+
+FROM node:22-alpine AS base
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
+WORKDIR /app
+
+FROM base AS deps
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml turbo.json tsconfig.base.json ./
+COPY packages ./packages
+COPY apps/api/package.json ./apps/api/package.json
+COPY apps/api/prisma ./apps/api/prisma
+RUN pnpm install --frozen-lockfile --filter @launchos/api...
+
+FROM base AS build
+COPY --from=deps /app /app
+COPY apps/api ./apps/api
+COPY packages ./packages
+RUN pnpm --filter @launchos/types build \
+  && pnpm --filter @launchos/utils build \
+  && pnpm --filter @launchos/api db:generate \
+  && pnpm --filter @launchos/api build
+
+FROM node:22-alpine AS runner
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=build /app /app
+EXPOSE 3001
+CMD ["pnpm", "--filter", "@launchos/api", "start"]

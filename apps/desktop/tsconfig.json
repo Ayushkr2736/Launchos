@@ -1,0 +1,17 @@
+{
+  "extends": "@launchos/typescript-config/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@launchos/ui": ["../../packages/ui/src/index.ts"],
+      "@launchos/ui/*": ["../../packages/ui/src/*"],
+      "@launchos/types": ["../../packages/types/src/index.ts"],
+      "@launchos/types/*": ["../../packages/types/src/*"],
+      "@launchos/utils": ["../../packages/utils/src/index.ts"],
+      "@launchos/utils/*": ["../../packages/utils/src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "src-tauri"]
+}

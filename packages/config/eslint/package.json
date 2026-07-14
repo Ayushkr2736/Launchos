@@ -1,0 +1,26 @@
+{
+  "name": "@launchos/eslint-config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "react.js",
+    "node.js"
+  ],
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-import-resolver-typescript": "^3.9.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.0",
+    "typescript": "^5.0.0"
+  }
+}

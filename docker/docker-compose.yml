@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: launchos-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-launchos}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-launchos}
+      POSTGRES_DB: ${POSTGRES_DB:-launchos}
+    ports:
+      - '${POSTGRES_PORT:-5432}:5432'
+    volumes:
+      - launchos_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-launchos} -d ${POSTGRES_DB:-launchos}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    profiles: ['api']
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.api
+    container_name: launchos-api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-launchos}:${POSTGRES_PASSWORD:-launchos}@postgres:5432/${POSTGRES_DB:-launchos}?schema=public
+      API_HOST: 0.0.0.0
+      API_PORT: 3001
+      API_CORS_ORIGIN: ${API_CORS_ORIGIN:-http://localhost:1420}
+      NODE_ENV: production
+    ports:
+      - '${API_PORT:-3001}:3001'
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  launchos_pg_data:

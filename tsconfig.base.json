@@ -1,0 +1,4 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@launchos/typescript-config/base.json"
+}

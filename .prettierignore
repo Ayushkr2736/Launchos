@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+coverage
+.turbo
+pnpm-lock.yaml
+apps/desktop/src-tauri/target
+apps/desktop/src-tauri/gen
+*.min.js
+*.min.css

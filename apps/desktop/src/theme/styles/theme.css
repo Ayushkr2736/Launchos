@@ -1,0 +1,74 @@
+:root {
+  /* Cursor-like light theme */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 9%;
+  --primary: 212 100% 46%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 12%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 42%;
+  --accent: 0 0% 95%;
+  --accent-foreground: 0 0% 12%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 212 100% 46%;
+  --sidebar: 0 0% 98%;
+  --sidebar-foreground: 0 0% 20%;
+  --sidebar-accent: 0 0% 94%;
+  --sidebar-border: 0 0% 90%;
+  --panel: 0 0% 99%;
+  --panel-foreground: 0 0% 12%;
+  --radius: 0.5rem;
+  --theme-transition-duration: 200ms;
+}
+
+.dark {
+  /* Cursor-like dark theme */
+  --background: 0 0% 7%;
+  --foreground: 0 0% 93%;
+  --card: 0 0% 9%;
+  --card-foreground: 0 0% 93%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 93%;
+  --primary: 212 100% 56%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 14%;
+  --secondary-foreground: 0 0% 93%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 58%;
+  --accent: 0 0% 14%;
+  --accent-foreground: 0 0% 93%;
+  --destructive: 0 62% 45%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 16%;
+  --input: 0 0% 16%;
+  --ring: 212 100% 56%;
+  --sidebar: 0 0% 8%;
+  --sidebar-foreground: 0 0% 78%;
+  --sidebar-accent: 0 0% 12%;
+  --sidebar-border: 0 0% 14%;
+  --panel: 0 0% 8%;
+  --panel-foreground: 0 0% 90%;
+}
+
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition:
+    background-color var(--theme-transition-duration) ease,
+    border-color var(--theme-transition-duration) ease,
+    color var(--theme-transition-duration) ease,
+    fill var(--theme-transition-duration) ease,
+    stroke var(--theme-transition-duration) ease,
+    box-shadow var(--theme-transition-duration) ease,
+    outline-color var(--theme-transition-duration) ease !important;
+  transition-delay: 0s !important;
+}

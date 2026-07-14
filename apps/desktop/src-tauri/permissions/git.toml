@@ -1,0 +1,24 @@
+[[permission]]
+identifier = "allow-git"
+description = "Allows Source Control git status, branches, sync, stash, history, and clone commands"
+commands.allow = [
+  "git_status",
+  "git_diff",
+  "git_stage",
+  "git_unstage",
+  "git_commit",
+  "git_fetch",
+  "git_pull",
+  "git_push",
+  "git_branches",
+  "git_checkout",
+  "git_clone",
+  "git_init",
+  "git_log",
+  "git_stash_list",
+  "git_stash_push",
+  "git_stash_apply",
+  "git_stash_pop",
+  "git_stash_drop",
+  "git_show"
+]

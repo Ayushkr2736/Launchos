@@ -1,0 +1,14 @@
+/* xterm fills the terminal session container */
+.launchos-terminal .xterm {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.launchos-terminal .xterm-viewport {
+  overflow-y: auto !important;
+}
+
+.launchos-terminal .xterm-screen {
+  height: 100%;
+}

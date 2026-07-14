@@ -1,0 +1,15 @@
+.bottom-panel {
+  background-color: hsl(var(--panel));
+  color: hsl(var(--panel-foreground));
+}
+
+.bottom-panel-tabbar {
+  background-color: hsl(var(--panel));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bottom-panel * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

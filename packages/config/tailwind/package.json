@@ -1,0 +1,16 @@
+{
+  "name": "@launchos/tailwind-config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "index.ts",
+  "types": "index.ts",
+  "files": [
+    "index.ts",
+    "postcss.config.cjs"
+  ],
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

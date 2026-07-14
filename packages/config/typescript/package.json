@@ -1,0 +1,12 @@
+{
+  "name": "@launchos/typescript-config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "files": [
+    "base.json",
+    "node.json",
+    "react.json",
+    "library.json"
+  ]
+}

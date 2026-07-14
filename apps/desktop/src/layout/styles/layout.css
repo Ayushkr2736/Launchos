@@ -1,0 +1,56 @@
+.layout-root {
+  --layout-min-width: 1280px;
+  /* Sidebar width is set inline from the layout store — do not hardcode it here. */
+  --layout-explorer-width: 260px;
+  --layout-ai-panel-width: 360px;
+  --layout-bottom-panel-height: 220px;
+}
+
+.layout-region {
+  transition: opacity 160ms ease;
+}
+
+.layout-resize-handle {
+  flex-shrink: 0;
+  touch-action: none;
+}
+
+.layout-resize-handle[data-separator='vertical'],
+.layout-resize-handle[aria-orientation='vertical'] {
+  cursor: col-resize;
+}
+
+.layout-resize-handle[data-separator='horizontal'],
+.layout-resize-handle[aria-orientation='horizontal'] {
+  cursor: row-resize;
+}
+
+.layout-resize-handle[data-separator='hover'],
+.layout-resize-handle[data-separator='active'] {
+  background-color: hsl(var(--ring));
+}
+
+.layout-resize-handle[data-separator='focus'] {
+  background-color: hsl(var(--border));
+}
+
+/* Density steps: laptop → desktop → wide → ultra */
+.layout-root[data-layout-breakpoint='laptop'] {
+  font-size: 14px;
+}
+
+.layout-root[data-layout-breakpoint='desktop'] {
+  font-size: 15px;
+}
+
+.layout-root[data-layout-breakpoint='wide'],
+.layout-root[data-layout-breakpoint='ultra'] {
+  font-size: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layout-region,
+  .layout-resize-handle {
+    transition: none !important;
+  }
+}

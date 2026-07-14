@@ -1,0 +1,25 @@
+.workspace-split-root {
+  --workspace-split-primary: 50%;
+  --workspace-split-secondary: 50%;
+}
+
+.workspace-split-root[data-split='true'] [data-workspace-pane='primary'] {
+  width: var(--workspace-split-primary);
+  flex: 0 0 auto;
+}
+
+.workspace-split-root[data-split='true'] [data-workspace-pane='secondary'] {
+  width: var(--workspace-split-secondary);
+  flex: 0 0 auto;
+}
+
+body.workspace-split-resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.workspace-split-resizing {
+    cursor: col-resize;
+  }
+}

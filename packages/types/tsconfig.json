@@ -1,0 +1,14 @@
+{
+  "extends": "@launchos/typescript-config/library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@launchos/types": ["./src/index.ts"],
+      "@launchos/types/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,8 @@
+.launchos-monaco {
+  min-height: 0;
+}
+
+.launchos-monaco .monaco-editor,
+.launchos-monaco .monaco-editor .overflow-guard {
+  border-radius: 0;
+}

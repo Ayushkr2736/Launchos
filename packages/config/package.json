@@ -1,0 +1,10 @@
+{
+  "name": "@launchos/config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Shared tooling configuration for LaunchOS packages and apps",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules"
+  }
+}

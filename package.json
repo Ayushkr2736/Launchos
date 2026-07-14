@@ -1,0 +1,57 @@
+{
+  "name": "launchos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LaunchOS — a production-grade AI desktop operating system",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:api": "turbo run dev --filter=@launchos/api",
+    "dev:desktop": "turbo run dev --filter=@launchos/desktop",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css,yml,yaml}\"",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "db:generate": "turbo run db:generate --filter=@launchos/api",
+    "db:migrate": "turbo run db:migrate --filter=@launchos/api",
+    "db:push": "turbo run db:push --filter=@launchos/api",
+    "db:studio": "turbo run db:studio --filter=@launchos/api",
+    "docker:up": "docker compose -f docker/docker-compose.yml up -d postgres",
+    "docker:up:api": "docker compose -f docker/docker-compose.yml --profile api up -d --build",
+    "docker:down": "docker compose -f docker/docker-compose.yml --profile api down",
+    "docker:logs": "docker compose -f docker/docker-compose.yml logs -f",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@launchos/eslint-config": "workspace:*",
+    "@launchos/typescript-config": "workspace:*",
+    "eslint": "^8.57.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "turbo": "^2.4.4",
+    "typescript": "^5.8.2"
+  },
+  "lint-staged": {
+    "apps/**/src/**/*.{ts,tsx,js,jsx}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "packages/**/src/**/*.{ts,tsx,js,jsx}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.{json,md,css,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

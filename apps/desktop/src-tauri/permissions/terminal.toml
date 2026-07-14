@@ -1,0 +1,10 @@
+[[permission]]
+identifier = "allow-terminal"
+description = "Allows creating, writing, resizing, listing shells, and killing interactive PTY terminals"
+commands.allow = [
+  "terminal_create",
+  "terminal_write",
+  "terminal_resize",
+  "terminal_kill",
+  "terminal_list_shells"
+]

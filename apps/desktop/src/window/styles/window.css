@@ -1,0 +1,93 @@
+.window-resize-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+}
+
+.window-resize-edge {
+  pointer-events: auto;
+  position: absolute;
+}
+
+.window-resize-edge-n,
+.window-resize-edge-s {
+  left: 6px;
+  right: 6px;
+  height: 6px;
+}
+
+.window-resize-edge-e,
+.window-resize-edge-w {
+  top: 44px;
+  bottom: 6px;
+  width: 4px;
+}
+
+.window-resize-edge-n {
+  top: 0;
+  cursor: ns-resize;
+}
+
+.window-resize-edge-s {
+  bottom: 0;
+  cursor: ns-resize;
+}
+
+.window-resize-edge-e {
+  right: 0;
+  cursor: ew-resize;
+}
+
+.window-resize-edge-w {
+  left: 0;
+  cursor: ew-resize;
+}
+
+.window-resize-edge-ne,
+.window-resize-edge-nw,
+.window-resize-edge-se,
+.window-resize-edge-sw {
+  width: 10px;
+  height: 10px;
+}
+
+.window-resize-edge-ne {
+  top: 0;
+  right: 0;
+  cursor: nesw-resize;
+}
+
+.window-resize-edge-nw {
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+
+.window-resize-edge-se {
+  right: 0;
+  bottom: 0;
+  cursor: nwse-resize;
+}
+
+.window-resize-edge-sw {
+  left: 0;
+  bottom: 0;
+  cursor: nesw-resize;
+}
+
+.window-drag-region {
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+
+.window-drag-region button,
+.window-drag-region a,
+.window-drag-region input,
+.window-drag-region textarea,
+.window-drag-region select,
+.window-drag-region [data-window-no-drag],
+.window-controls {
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}

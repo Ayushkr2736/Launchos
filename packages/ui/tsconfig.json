@@ -1,0 +1,13 @@
+{
+  "extends": "@launchos/typescript-config/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@launchos/ui": ["./src/index.ts"],
+      "@launchos/ui/*": ["./src/*"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

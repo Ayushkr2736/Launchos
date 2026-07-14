@@ -1,0 +1,29 @@
+.shell-root {
+  /* Do NOT set --shell-sidebar-width here — it shadows documentElement updates
+     from useLayoutCssVars and permanently locks the sidebar at 64px. */
+  --shell-explorer-width: 260px;
+  --shell-ai-panel-width: 360px;
+  --shell-bottom-panel-height: 220px;
+  --shell-titlebar-height: 2.75rem;
+}
+
+.shell-sidebar {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+body.sidebar-resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
+body.sidebar-resizing .layout-sidebar-region {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layout-sidebar-region {
+    transition: none !important;
+  }
+}
